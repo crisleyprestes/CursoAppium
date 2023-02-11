@@ -1,14 +1,13 @@
 package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.appium.core.DriverFactory;
+import br.com.linhares.crisley.appium.core.BaseTest;
 import br.com.linhares.crisley.pages.FormularioPage;
 import br.com.linhares.crisley.pages.MenuPage;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FormularioTeste {
+public class FormularioTeste extends BaseTest{
 
     private FormularioPage formulario = new FormularioPage();
     private MenuPage menu = new MenuPage();
@@ -16,11 +15,6 @@ public class FormularioTeste {
     @Before
     public void inicializarAppium(){
         menu.acessarFormulario();
-    }
-
-    @After
-    public void tearDown(){
-        DriverFactory.killDriver();
     }
 
     @Test

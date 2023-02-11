@@ -1,12 +1,10 @@
 package br.com.linhares.crisley.pages;
 
-import br.com.linhares.crisley.appium.core.DSL;
+import br.com.linhares.crisley.appium.core.BasePage;
 
-public class MenuPage {
-
-    private DSL dsl = new DSL();
+public class MenuPage extends BasePage {
 
     public void acessarFormulario(){
-        dsl.clicarPorTexto("Formulário");
+        clicarPorTexto("Formulário");
     }
 }

@@ -1,62 +1,60 @@
 package br.com.linhares.crisley.pages;
 
-import br.com.linhares.crisley.appium.core.DSL;
+import br.com.linhares.crisley.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
-public class FormularioPage {
-
-    private DSL dsl = new DSL();
+public class FormularioPage extends BasePage{
 
     public void clicarCheck(){
-        dsl.clicar(By.className("android.widget.CheckBox"));
+        clicar(By.className("android.widget.CheckBox"));
     }
 
     public void clicarSwitch(){
-        dsl.clicar(MobileBy.AccessibilityId("switch"));
+        clicar(MobileBy.AccessibilityId("switch"));
     }
 
     public void escreverNome(String nome){
-        dsl.escrever(MobileBy.AccessibilityId("nome"), nome);
+        escrever(MobileBy.AccessibilityId("nome"), nome);
     }
 
     public boolean isCheckMarcado(){
-        return dsl.isCheckMarcado(By.className("android.widget.CheckBox"));
+        return isCheckMarcado(By.className("android.widget.CheckBox"));
     }
 
     public boolean isSwitchMarcado(){
-        return dsl.isCheckMarcado(MobileBy.AccessibilityId("switch"));
+        return isCheckMarcado(MobileBy.AccessibilityId("switch"));
     }
 
     public String obterNome(){
-        return dsl.obterTexto(MobileBy.AccessibilityId("nome"));
+        return obterTexto(MobileBy.AccessibilityId("nome"));
     }
 
     public String obterValorCombo(){
-        return dsl.obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
+        return obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
     }
 
     public void salvar(){
-        dsl.clicarPorTexto("SALVAR");
+        clicarPorTexto("SALVAR");
     }
 
     public void selecionarCombo(String valor){
-        dsl.selecionarCombo(MobileBy.AccessibilityId("console"), valor);
+        selecionarCombo(MobileBy.AccessibilityId("console"), valor);
     }
 
     public String validarStatusCheckbox(){
-        return dsl.obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Checkbox:')]"));
+        return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Checkbox:')]"));
     }
 
     public String validarConsoleCadastrado(){
-        return dsl.obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Console:')]"));
+        return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Console:')]"));
     }
 
     public String validarNomeCadastrado(){
-        return dsl.obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
+        return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
     }
 
     public String validarStatusSwitch(){
-        return dsl.obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Switch:')]"));
+        return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Switch:')]"));
     }
 }

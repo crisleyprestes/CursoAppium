@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import static br.com.linhares.crisley.appium.core.DriverFactory.getDriver;
 
-public class DSL {
+public class BasePage {
 
     public void clicar(By by){
         getDriver().findElement(by).click();
