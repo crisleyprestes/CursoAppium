@@ -13,16 +13,9 @@ public class SplashTest extends BaseTest {
 
     @Test
     public void deveAguardarSplashSumir(){
-        //acessar menu splash
         menu.acessarSplash();
-
-        //verificar que o splash está sendo exibido
         splash.isTelaSplashVisivel();
-
-        //aguardar a saída do splash
         splash.aguardarSplashSumir();
-
-        //verificar que o formulário está aparecendo
         Assert.assertTrue(menu.existeElementoPorTexto("Formulário"));
     }
 }

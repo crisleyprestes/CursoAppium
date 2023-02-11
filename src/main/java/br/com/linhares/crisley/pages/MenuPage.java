@@ -4,6 +4,10 @@ import br.com.linhares.crisley.appium.core.BasePage;
 
 public class MenuPage extends BasePage {
 
+    public void acessarAlertas(){
+        clicarPorTexto("Alertas");
+    }
+
     public void acessarFormulario(){
         clicarPorTexto("Formulário");
     }

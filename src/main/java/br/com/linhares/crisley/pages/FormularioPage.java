@@ -47,18 +47,22 @@ public class FormularioPage extends BasePage{
     }
 
     public String validarStatusCheckbox(){
+        aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Checkbox:')]"));
         return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Checkbox:')]"));
     }
 
     public String validarConsoleCadastrado(){
+        aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Console:')]"));
         return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Console:')]"));
     }
 
     public String validarNomeCadastrado(){
+        aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
         return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
     }
 
     public String validarStatusSwitch(){
+        aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Switch:')]"));
         return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Switch:')]"));
     }
 }
