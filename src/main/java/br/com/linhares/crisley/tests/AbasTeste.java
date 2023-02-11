@@ -1,7 +1,8 @@
-package br.com.linhares.crisley.pages;
+package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.appium.core.AbasPage;
+import br.com.linhares.crisley.pages.AbasPage;
 import br.com.linhares.crisley.appium.core.BaseTest;
+import br.com.linhares.crisley.pages.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 

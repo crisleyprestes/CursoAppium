@@ -1,6 +1,8 @@
-package br.com.linhares.crisley.appium.core;
+package br.com.linhares.crisley.pages;
 
-public class AbasPage extends BasePage{
+import br.com.linhares.crisley.appium.core.BasePage;
+
+public class AbasPage extends BasePage {
 
     public void acessarAbaDois(){
         clicarPorTexto("ABA 2");
