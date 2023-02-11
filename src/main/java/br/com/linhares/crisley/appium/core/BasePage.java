@@ -1,6 +1,9 @@
 package br.com.linhares.crisley.appium.core;
 
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 import static br.com.linhares.crisley.appium.core.DriverFactory.getDriver;
 
@@ -16,6 +19,11 @@ public class BasePage {
 
     public void escrever(By by, String texto){
         getDriver().findElement(by).sendKeys(texto);
+    }
+
+    public boolean existeElementoPorTexto(String texto){
+        List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
+        return elementos.size() > 0;
     }
 
     public boolean isCheckMarcado(By by){

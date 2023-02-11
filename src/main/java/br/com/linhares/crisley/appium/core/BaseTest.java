@@ -21,6 +21,20 @@ public class BaseTest {
         DriverFactory.killDriver();
     }
 
+    @After
+    public void tearDown(){
+        gerarScreenshot();
+        DriverFactory.getDriver().resetApp();
+    }
+
+    public void esperar(long tempo){
+        try {
+            Thread.sleep(tempo);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void gerarScreenshot(){
         File imagem = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
@@ -28,11 +42,5 @@ public class BaseTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @After
-    public void tearDown(){
-        gerarScreenshot();
-        DriverFactory.getDriver().resetApp();
     }
 }

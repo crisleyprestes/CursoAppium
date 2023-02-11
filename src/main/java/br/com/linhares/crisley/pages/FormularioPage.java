@@ -38,6 +38,10 @@ public class FormularioPage extends BasePage{
         clicarPorTexto("SALVAR");
     }
 
+    public void salvarDemorado(){
+        clicarPorTexto("SALVAR DEMORADO");
+    }
+
     public void selecionarCombo(String valor){
         selecionarCombo(MobileBy.AccessibilityId("console"), valor);
     }
