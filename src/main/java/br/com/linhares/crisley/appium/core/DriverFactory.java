@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class DriverFactory {
+public class DriverFactory{
 
     private static AndroidDriver<MobileElement> driver;
 
@@ -29,7 +29,7 @@ public class DriverFactory {
                 "\\src\\main\\resources\\CTAppium_1_2.apk");
 
         try {
-            driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
+            driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

@@ -1,5 +1,6 @@
 package br.com.linhares.crisley.tests;
 
+import br.com.linhares.crisley.appium.core.BasePage;
 import br.com.linhares.crisley.appium.core.BaseTest;
 import br.com.linhares.crisley.pages.FormularioPage;
 import br.com.linhares.crisley.pages.MenuPage;
@@ -57,5 +58,13 @@ public class FormularioTeste extends BaseTest{
         formulario.escreverNome("Crisley");
         formulario.salvarDemorado();
         Assert.assertEquals("Nome: Crisley", formulario.validarNomeCadastrado());
+    }
+
+    @Test
+    public void deveAlterarData(){
+        menu.clicarPorTexto("01/01/2000");
+        menu.clicarPorTexto("20");
+        menu.clicarPorTexto("OK");
+        Assert.assertTrue(menu.existeElementoPorTexto("20/2/2000"));
     }
 }
