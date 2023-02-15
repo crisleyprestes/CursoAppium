@@ -62,9 +62,17 @@ public class FormularioTeste extends BaseTest{
 
     @Test
     public void deveAlterarData(){
-        menu.clicarPorTexto("01/01/2000");
-        menu.clicarPorTexto("20");
-        menu.clicarPorTexto("OK");
-        Assert.assertTrue(menu.existeElementoPorTexto("20/2/2000"));
+        formulario.clicarPorTexto("01/01/2000");
+        formulario.clicarPorTexto("20");
+        formulario.clicarPorTexto("OK");
+        Assert.assertTrue(formulario.existeElementoPorTexto("20/2/2000"));
+    }
+
+    @Test
+    public void deveAlterarHora(){
+        formulario.clicarPorTexto("06:00");
+        formulario.clicarHoraEMinuto("10", "40");
+        formulario.clicarPorTexto("OK");
+        Assert.assertTrue(formulario.existeElementoPorTexto("10:40"));
     }
 }

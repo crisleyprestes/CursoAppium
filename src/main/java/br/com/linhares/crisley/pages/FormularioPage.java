@@ -10,6 +10,11 @@ public class FormularioPage extends BasePage{
         clicar(By.className("android.widget.CheckBox"));
     }
 
+    public void clicarHoraEMinuto(String hora, String minuto){
+        clicar(MobileBy.AccessibilityId(""+hora+""));
+        clicar(MobileBy.AccessibilityId(""+minuto+""));
+    }
+
     public void clicarSwitch(){
         clicar(MobileBy.AccessibilityId("switch"));
     }
