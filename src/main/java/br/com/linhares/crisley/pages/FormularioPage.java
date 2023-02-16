@@ -2,7 +2,10 @@ package br.com.linhares.crisley.pages;
 
 import br.com.linhares.crisley.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+
+import static br.com.linhares.crisley.appium.core.DriverFactory.getDriver;
 
 public class FormularioPage extends BasePage{
 
@@ -13,6 +16,15 @@ public class FormularioPage extends BasePage{
     public void clicarHoraEMinuto(String hora, String minuto){
         clicar(MobileBy.AccessibilityId(""+hora+""));
         clicar(MobileBy.AccessibilityId(""+minuto+""));
+    }
+
+    public void clicarSeekBar(double posicao){
+        int delta = 43;
+        MobileElement seek = getDriver().findElement(MobileBy.AccessibilityId("slid"));
+        int y = seek.getLocation().y + (seek.getSize().height / 2);
+        int x = (int) ((seek.getLocation().x + delta) + ((seek.getSize().width - 2 * delta) * posicao));
+        tap(x, y);
+
     }
 
     public void clicarSwitch(){
@@ -64,6 +76,11 @@ public class FormularioPage extends BasePage{
     public String validarNomeCadastrado(){
         aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
         return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Nome:')]"));
+    }
+
+    public String validarSlider(){
+        aguardarPresencaElemento(By.xpath("//android.widget.TextView[starts-with(@text,'Slider:')]"));
+        return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text,'Slider:')]"));
     }
 
     public String validarStatusSwitch(){

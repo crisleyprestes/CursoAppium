@@ -74,4 +74,16 @@ public class FormularioTeste extends BaseTest{
         formulario.clicarPorTexto("OK");
         Assert.assertTrue(formulario.existeElementoPorTexto("10:40"));
     }
+
+    @Test
+    public void deveInteragirComSeekBar(){
+        // clicar no seekbar
+        formulario.clicarSeekBar(0.67);
+
+        // salvar
+        formulario.salvar();
+
+        // obter o valor
+        Assert.assertTrue(formulario.validarSlider().endsWith("67"));
+    }
 }
