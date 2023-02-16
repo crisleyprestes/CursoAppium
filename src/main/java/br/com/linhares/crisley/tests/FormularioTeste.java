@@ -77,13 +77,8 @@ public class FormularioTeste extends BaseTest{
 
     @Test
     public void deveInteragirComSeekBar(){
-        // clicar no seekbar
         formulario.clicarSeekBar(0.67);
-
-        // salvar
         formulario.salvar();
-
-        // obter o valor
         Assert.assertTrue(formulario.validarSlider().endsWith("67"));
     }
 }
