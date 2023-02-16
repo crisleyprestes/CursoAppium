@@ -1,6 +1,5 @@
 package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.appium.core.BasePage;
 import br.com.linhares.crisley.appium.core.BaseTest;
 import br.com.linhares.crisley.pages.FormularioPage;
 import br.com.linhares.crisley.pages.MenuPage;
@@ -14,7 +13,7 @@ public class FormularioTeste extends BaseTest{
     private MenuPage menu = new MenuPage();
 
     @Before
-    public void inicializarAppium(){
+    public void setup(){
         menu.acessarFormulario();
     }
 

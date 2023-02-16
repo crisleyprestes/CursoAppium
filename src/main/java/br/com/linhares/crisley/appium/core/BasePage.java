@@ -1,6 +1,7 @@
 package br.com.linhares.crisley.appium.core;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,5 +45,9 @@ public class BasePage {
     public void selecionarCombo(By by, String valor){
         getDriver().findElement(by).click();
         clicarPorTexto(valor);
+    }
+
+    public void tap(int x, int y){
+        new TouchAction(getDriver()).tap(x, y).perform();
     }
 }

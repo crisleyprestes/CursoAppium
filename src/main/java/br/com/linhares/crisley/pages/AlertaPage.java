@@ -9,6 +9,15 @@ public class AlertaPage extends BasePage {
         clicarPorTexto("ALERTA CONFIRM");
     }
 
+    public void clicarAlertaSimples(){
+        clicarPorTexto("ALERTA SIMPLES");
+    }
+
+    public void clicarForaCaixa(){
+        aguardarPresencaElemento(By.id("android:id/message"));
+        tap(100, 150);
+    }
+
     public void confirmar(){
         clicarPorTexto("CONFIRMAR");
     }
