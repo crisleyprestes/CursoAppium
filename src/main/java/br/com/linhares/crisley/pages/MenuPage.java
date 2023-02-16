@@ -1,6 +1,7 @@
 package br.com.linhares.crisley.pages;
 
 import br.com.linhares.crisley.appium.core.BasePage;
+import org.openqa.selenium.By;
 
 public class MenuPage extends BasePage {
 
@@ -26,5 +27,10 @@ public class MenuPage extends BasePage {
 
     public void acessarSplash(){
         clicarPorTexto("Splash");
+    }
+
+    public void scrollTela(double inicio, double fim){
+        aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
+        scroll(inicio, fim);
     }
 }

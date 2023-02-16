@@ -22,14 +22,6 @@ public class AlertaPage extends BasePage {
         clicarPorTexto("CONFIRMAR");
     }
 
-    public String obterMensagemAlerta(){
-        return obterTexto(By.id("android:id/message"));
-    }
-
-    public String obterTituloAlerta(){
-        return obterTexto(By.id("android:id/alertTitle"));
-    }
-
     public void sair(){
         clicarPorTexto("SAIR");
     }
