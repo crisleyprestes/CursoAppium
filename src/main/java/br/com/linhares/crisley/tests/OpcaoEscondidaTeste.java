@@ -1,11 +1,11 @@
 package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.appium.core.BaseTest;
+import br.com.linhares.crisley.appium.core.BaseTeste;
 import br.com.linhares.crisley.pages.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class OpcaoEscondidaTeste extends BaseTest {
+public class OpcaoEscondidaTeste extends BaseTeste {
 
     private MenuPage menu = new MenuPage();
 

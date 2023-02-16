@@ -29,6 +29,12 @@ public class MenuPage extends BasePage {
         clicarPorTexto("Splash");
     }
 
+    public void acessarSwipe(){
+        aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
+        scroll(0.9, 0.1);
+        clicarPorTexto("Swipe");
+    }
+
     public void scrollTela(double inicio, double fim){
         aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
         scroll(inicio, fim);

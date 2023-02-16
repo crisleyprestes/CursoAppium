@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
-public class BaseTest {
+public class BaseTeste {
 
     @Rule
     public TestName testName = new TestName();

@@ -1,13 +1,13 @@
 package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.appium.core.BaseTest;
+import br.com.linhares.crisley.appium.core.BaseTeste;
 import br.com.linhares.crisley.pages.AlertaPage;
 import br.com.linhares.crisley.pages.MenuPage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AlertaTeste extends BaseTest {
+public class AlertaTeste extends BaseTeste {
 
     private AlertaPage alerta = new AlertaPage();
     private MenuPage menu = new MenuPage();
