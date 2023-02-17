@@ -8,4 +8,8 @@ public class SBMenuPage extends BasePage {
         clicarPorTexto("CONTAS");
     }
 
+    public void acessarMovimentacoes(){
+        clicarPorTexto("MOV...");
+    }
+
 }

@@ -2,10 +2,7 @@ package br.com.linhares.crisley.tests;
 
 import br.com.linhares.crisley.appium.core.BaseTeste;
 import br.com.linhares.crisley.pages.*;
-import br.com.linhares.crisley.pages.SeuBarriga.SBContasPage;
-import br.com.linhares.crisley.pages.SeuBarriga.SBHomePage;
-import br.com.linhares.crisley.pages.SeuBarriga.SBLoginPage;
-import br.com.linhares.crisley.pages.SeuBarriga.SBMenuPage;
+import br.com.linhares.crisley.pages.SeuBarriga.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +14,7 @@ public class SBTeste extends BaseTeste {
     private SBHomePage home = new SBHomePage();
     private SBLoginPage login = new SBLoginPage();
     private SBMenuPage sbMenu = new SBMenuPage();
+    private SBMovimentacoesPage movimentacoes = new SBMovimentacoesPage();
 
     @Before
     public void setUp(){
@@ -41,5 +39,24 @@ public class SBTeste extends BaseTeste {
         contas.excluir();
         Assert.assertTrue(contas.existeElementoPorTexto("Conta excluída com sucesso"));
         Assert.assertFalse(contas.existeElementoPorTexto("Conta mesmo nome"));
+    }
+
+    @Test
+    public void deveValidarInclusaoMovimentacao(){
+        sbMenu.acessarMovimentacoes();
+        movimentacoes.salvar();
+        Assert.assertTrue(movimentacoes.existeElementoPorTexto("Descrição é um campo obrigatório"));
+        movimentacoes.setDescricao("Movimentação de Teste");
+        movimentacoes.salvar();
+        Assert.assertTrue(movimentacoes.existeElementoPorTexto("Interessado é um campo obrigatório"));
+        movimentacoes.setInteressado("Crisley Linhares");
+        movimentacoes.salvar();
+        Assert.assertTrue(movimentacoes.existeElementoPorTexto("Valor é um campo obrigatório"));
+        movimentacoes.setValor("300,00");
+        movimentacoes.salvar();
+        Assert.assertTrue(movimentacoes.existeElementoPorTexto("Conta é um campo obrigatório"));
+        movimentacoes.setConta("Conta para movimentacoes");
+        movimentacoes.salvar();
+        Assert.assertTrue(movimentacoes.existeElementoPorTexto("Movimentação cadastrada com sucesso"));
     }
 }
