@@ -31,6 +31,14 @@ public class BasePage {
         getDriver().findElement(by).sendKeys(texto);
     }
 
+    public void esperar (long tempo){
+        try {
+            Thread.sleep(tempo);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public boolean existeElementoPorTexto(String texto){
         List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
         return elementos.size() > 0;

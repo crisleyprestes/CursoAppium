@@ -21,6 +21,13 @@ public class MenuPage extends BasePage {
         clicarPorTexto("Cliques");
     }
 
+    public void acessarDragAndDrop(){
+        aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
+        scrollDown();
+        clicarPorTexto("Drag and drop");
+        esperar(1000);
+    }
+
     public void acessarFormulario(){
         clicarPorTexto("Formulário");
     }
