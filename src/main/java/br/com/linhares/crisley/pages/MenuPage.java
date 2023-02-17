@@ -31,12 +31,12 @@ public class MenuPage extends BasePage {
 
     public void acessarSwipe(){
         aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
-        scroll(0.9, 0.1);
+        scrollDown();
         clicarPorTexto("Swipe");
     }
 
-    public void scrollTela(double inicio, double fim){
+    public void scrollTela(){
         aguardarPresencaElemento(By.xpath("//*[@text='Formulário']"));
-        scroll(inicio, fim);
+        scrollDown();
     }
 }

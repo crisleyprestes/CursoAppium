@@ -67,6 +67,14 @@ public class BasePage {
                 .perform();
     }
 
+    public void scrollDown(){
+        scroll(0.9, 0.1);
+    }
+
+    public void scrollUp(){
+        scroll(0.1, 0.9);
+    }
+
     public void selecionarCombo(By by, String valor){
         getDriver().findElement(by).click();
         clicarPorTexto(valor);
@@ -85,6 +93,14 @@ public class BasePage {
                 .moveTo(end_x, y)
                 .release()
                 .perform();
+    }
+
+    public void swipeLeft(){
+        swipe(0.1, 0.9);
+    }
+
+    public void swipeRight(){
+        swipe(0.9, 0.1);
     }
 
     public void tap(int x, int y){

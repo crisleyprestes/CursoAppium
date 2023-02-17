@@ -11,7 +11,7 @@ public class OpcaoEscondidaTeste extends BaseTeste {
 
     @Test
     public void deveEncontrarOpcaoEscondida(){
-        menu.scrollTela(0.9, 0.1);
+        menu.scrollTela();
         menu.clicarPorTexto("Opção bem escondida");
         Assert.assertEquals("Você achou essa opção", menu.obterMensagemAlerta());
         menu.clicarPorTexto("OK");
