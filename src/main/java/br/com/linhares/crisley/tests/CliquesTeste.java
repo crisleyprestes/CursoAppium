@@ -19,7 +19,7 @@ public class CliquesTeste extends BaseTeste {
 
     @Test
     public void deveRealizarCliqueLongo(){
-        cliques.cliqueLongo();
+        cliques.cliqueLongo("Clique Longo");
         Assert.assertEquals("Clique Longo", cliques.obterTextoCampo());
     }
 

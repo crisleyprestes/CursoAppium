@@ -27,6 +27,13 @@ public class BasePage {
         clicar(By.xpath("//*[@text='"+texto+"']"));
     }
 
+    public void cliqueLongo(String nome){
+        new TouchAction(getDriver())
+                .longPress(getDriver()
+                        .findElement(By.xpath("//*[@text='"+nome+"']")))
+                .perform();
+    }
+
     public void entrarContextoWeb(){
         getDriver().context((String) getDriver().getContextHandles().toArray()[1]);
     }
