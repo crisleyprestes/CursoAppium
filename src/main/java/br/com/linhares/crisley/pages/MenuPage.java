@@ -37,6 +37,10 @@ public class MenuPage extends BasePage {
         entrarContextoWeb();
     }
 
+    public void acessarSeuBarrigaNativo(){
+        clicarPorTexto("SeuBarriga Nativo");
+    }
+
     public void acessarSplash(){
         clicarPorTexto("Splash");
     }
