@@ -1,9 +1,9 @@
-package br.com.linhares.crisley.pages;
+package br.com.linhares.crisley.pages.SeuBarriga;
 
 import br.com.linhares.crisley.appium.core.BasePage;
 import org.openqa.selenium.By;
 
-public class SeuBarrigaPage extends BasePage {
+public class SBLoginPage extends BasePage {
 
     public void login(String email, String senha){
         escrever(By.xpath("//*[@text='Nome']"), email);
