@@ -15,6 +15,7 @@ public class SBTeste extends BaseTeste {
     private SBLoginPage login = new SBLoginPage();
     private SBMenuPage sbMenu = new SBMenuPage();
     private SBMovimentacoesPage movimentacoes = new SBMovimentacoesPage();
+    private SBResumoPage resumo = new SBResumoPage();
 
     @Before
     public void setUp(){
@@ -58,5 +59,16 @@ public class SBTeste extends BaseTeste {
         movimentacoes.setConta("Conta para movimentacoes");
         movimentacoes.salvar();
         Assert.assertTrue(movimentacoes.existeElementoPorTexto("Movimentação cadastrada com sucesso"));
+    }
+
+    @Test
+    public void deveAtualizarSaldoAoExcluirMovimentacao(){
+        Assert.assertEquals("534.00", home.verificarSaldo("Conta para saldo"));
+        sbMenu.acessarResumo();
+        resumo.excluirMovimentacao("Movimentacao 3, calculo saldo");
+        Assert.assertTrue(resumo.existeElementoPorTexto("Movimentação removida com sucesso!"));
+        sbMenu.acessarHome();
+        home.atualizarTela();
+        Assert.assertEquals("-1000.00", home.verificarSaldo("Conta para saldo"));
     }
 }

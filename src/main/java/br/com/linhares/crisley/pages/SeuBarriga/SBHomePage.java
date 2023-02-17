@@ -9,4 +9,14 @@ public class SBHomePage extends BasePage {
         clicarPorTexto("RESET");
         aguardarPresencaElemento(By.xpath("//*[@text='Dados resetados com sucesso!']"));
     }
+
+    public void atualizarTela(){
+        esperar(2000);
+        scroll(0.2, 0.9);
+    }
+
+    public String verificarSaldo(String conta){
+        return obterTexto(By.xpath
+                ("//*[@text='"+conta+"']/following-sibling::android.widget.TextView"));
+    }
 }
