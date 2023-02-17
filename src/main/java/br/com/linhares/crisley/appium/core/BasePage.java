@@ -27,6 +27,14 @@ public class BasePage {
         clicar(By.xpath("//*[@text='"+texto+"']"));
     }
 
+    public void entrarContextoWeb(){
+        getDriver().context((String) getDriver().getContextHandles().toArray()[1]);
+    }
+
+    public void sairContextoWeb(){
+        getDriver().context((String) getDriver().getContextHandles().toArray()[0]);
+    }
+
     public void escrever(By by, String texto){
         getDriver().findElement(by).sendKeys(texto);
     }

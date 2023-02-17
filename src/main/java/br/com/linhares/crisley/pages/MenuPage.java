@@ -32,6 +32,11 @@ public class MenuPage extends BasePage {
         clicarPorTexto("Formulário");
     }
 
+    public void acessarSeuBarrigaHibrido(){
+        clicarPorTexto("SeuBarriga Híbrido");
+        entrarContextoWeb();
+    }
+
     public void acessarSplash(){
         clicarPorTexto("Splash");
     }
