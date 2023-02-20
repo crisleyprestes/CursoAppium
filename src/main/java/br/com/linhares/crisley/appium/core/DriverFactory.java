@@ -3,6 +3,7 @@ package br.com.linhares.crisley.appium.core;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -31,13 +32,20 @@ public class DriverFactory{
                 File.separator + "main" +
                 File.separator + "resources" +
                 File.separator + "CTAppium_1_2.apk");
+        desiredCapabilities.setCapability("appWaitPackage",
+                "com.google.android.permissioncontroller");
+        desiredCapabilities.setCapability("appWaitActivity",
+                "com.android.packageinstaller.permission.ui.ReviewPermissionsActivity");
 
         try {
-            driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+            driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),
+                    desiredCapabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(By.id("com.android.permissioncontroller:id/continue_button")).click();
+        driver.findElement(By.xpath("//*[@text='OK']")).click();
     }
 
     private static void createTestObjectDriver(){
