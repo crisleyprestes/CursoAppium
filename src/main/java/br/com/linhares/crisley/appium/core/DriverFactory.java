@@ -16,6 +16,7 @@ public class DriverFactory{
     public static AndroidDriver<MobileElement> getDriver(){
         if(driver == null){
             createDriver();
+            //createTestObjectDriver();
         }
         return driver;
     }
@@ -30,6 +31,21 @@ public class DriverFactory{
 
         try {
             driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    private static void createTestObjectDriver(){
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability("platformName", "Android");
+        desiredCapabilities.setCapability("automationName", "uiautomator2");
+
+        try {
+            URL url = new URL("https://oauth-prestes40-5f4f0:" +
+                    "12eff6f9-d01e-429c-bb06-1ef17559a4cb@ondemand.us-west-1.saucelabs.com:443/wd/hub");
+            driver = new AndroidDriver(url, desiredCapabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
