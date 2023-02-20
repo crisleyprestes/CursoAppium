@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +17,6 @@ public class DriverFactory{
     public static AndroidDriver<MobileElement> getDriver(){
         if(driver == null){
             createDriver();
-            //createTestObjectDriver();
         }
         return driver;
     }
@@ -27,7 +27,10 @@ public class DriverFactory{
         desiredCapabilities.setCapability("deviceName", "emulator-5554");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") +
-                "\\src\\main\\resources\\CTAppium_1_2.apk");
+                File.separator + "src" +
+                File.separator + "main" +
+                File.separator + "resources" +
+                File.separator + "CTAppium_1_2.apk");
 
         try {
             driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);

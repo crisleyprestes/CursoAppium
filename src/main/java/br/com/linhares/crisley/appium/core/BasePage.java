@@ -2,8 +2,11 @@ package br.com.linhares.crisley.appium.core;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -28,9 +31,9 @@ public class BasePage {
     }
 
     public void cliqueLongo(String nome){
-        new TouchAction(getDriver())
-                .longPress(getDriver()
-                        .findElement(By.xpath("//*[@text='"+nome+"']")))
+        new TouchAction<>(getDriver())
+                .longPress(PointOption.point
+                        (getDriver().findElement(By.xpath("//*[@text='"+nome+"']")).getCenter()))
                 .perform();
     }
 
@@ -82,10 +85,10 @@ public class BasePage {
         int start_y = (int) (size.height * inicio);
         int end_y = (int) (size.height * fim);
 
-        new TouchAction(getDriver())
-                .press(x, start_y)
-                .waitAction(Duration.ofMillis(500))
-                .moveTo(x, end_y)
+        new TouchAction<>(getDriver())
+                .press(PointOption.point(new Point(x, start_y)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(new Point(x, end_y)))
                 .release()
                 .perform();
     }
@@ -110,10 +113,10 @@ public class BasePage {
         int start_x = (int) (size.width * inicio);
         int end_x = (int) (size.width * fim);
 
-        new TouchAction(getDriver())
-                .press(start_x, y)
-                .waitAction(Duration.ofMillis(500))
-                .moveTo(end_x, y)
+        new TouchAction<>(getDriver())
+                .press(PointOption.point(new Point(start_x, y)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(new Point(end_x, y)))
                 .release()
                 .perform();
     }
@@ -123,10 +126,10 @@ public class BasePage {
         int start_x = (int) (element.getSize().width * inicio);
         int end_x = (int) (element.getSize().width * fim);
 
-        new TouchAction(getDriver())
-                .press(start_x, y)
-                .waitAction(Duration.ofMillis(500))
-                .moveTo(end_x, y)
+        new TouchAction<>(getDriver())
+                .press(PointOption.point(new Point(start_x, y)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(end_x, y))
                 .release()
                 .perform();
     }
@@ -140,6 +143,8 @@ public class BasePage {
     }
 
     public void tap(int x, int y){
-        new TouchAction(getDriver()).tap(x, y).perform();
+        new TouchAction<>(getDriver())
+                .tap(PointOption.point(new Point(x,y)))
+                .perform();
     }
 }
