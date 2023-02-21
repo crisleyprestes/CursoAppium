@@ -25,7 +25,7 @@
 - Clone o projeto:
 <pre>git clone https://github.com/crisleyprestes/CursoAppium.git</pre>
 
-- Importe o projeto para a IDE
+- Importe o projeto para a IDE.
 
 ### Estutura do projeto
 
