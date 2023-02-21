@@ -9,6 +9,6 @@ public class SBLoginPage extends BasePage {
         escrever(By.xpath("//*[@text='Nome']"), email);
         escrever(By.xpath("//*[@text='Senha']"), senha);
         clicarPorTexto("ENTRAR");
-        aguardarPresencaElemento(By.xpath("//*[@text='HOME']"));
+        aguardarPresencaElemento(By.xpath("//*[@text='Home']"));
     }
 }

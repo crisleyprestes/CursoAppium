@@ -11,6 +11,9 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
+import static br.com.linhares.crisley.appium.core.DriverFactory.getDriver;
+import static br.com.linhares.crisley.appium.core.DriverFactory.killDriver;
+
 public class BaseTeste {
 
     @Rule
@@ -18,13 +21,13 @@ public class BaseTeste {
 
     @AfterClass
     public static void finalizaClasse(){
-        DriverFactory.killDriver();
+        killDriver();
     }
 
     @After
     public void tearDown(){
         gerarScreenshot();
-        DriverFactory.getDriver().resetApp();
+        killDriver();
     }
 
     public void esperar(long tempo){
@@ -36,7 +39,7 @@ public class BaseTeste {
     }
 
     public void gerarScreenshot(){
-        File imagem = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+        File imagem = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(imagem, new File("target/screenshots/"+testName.getMethodName()+".png"));
         } catch (IOException e) {

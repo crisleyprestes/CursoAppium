@@ -16,7 +16,7 @@ public class AccordionPage extends BasePage {
     public String obterTextoOpcaoUm(){
         getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return obterTexto(By.xpath(
-                "//*[@text='Opção 1']/../..//following-sibling::android.view.ViewGroup//" +
+                "//*[@text='Opção 1']/../../following-sibling::android.view.ViewGroup//" +
                         "android.widget.TextView"));
     }
 }

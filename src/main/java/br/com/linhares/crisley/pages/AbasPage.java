@@ -5,7 +5,7 @@ import br.com.linhares.crisley.appium.core.BasePage;
 public class AbasPage extends BasePage {
 
     public void acessarAbaDois(){
-        clicarPorTexto("ABA 2");
+        clicarPorTexto("Aba 2");
     }
 
     public boolean isAbaDois(){

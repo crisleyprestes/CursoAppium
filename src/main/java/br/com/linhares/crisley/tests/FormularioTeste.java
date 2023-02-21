@@ -64,7 +64,7 @@ public class FormularioTeste extends BaseTeste {
         formulario.clicarPorTexto("01/01/2000");
         formulario.clicarPorTexto("20");
         formulario.clicarPorTexto("OK");
-        Assert.assertTrue(formulario.existeElementoPorTexto("20/2/2000"));
+        Assert.assertTrue(formulario.existeElementoPorTexto("20/01/2000"));
     }
 
     @Test
@@ -77,8 +77,8 @@ public class FormularioTeste extends BaseTeste {
 
     @Test
     public void deveInteragirComSeekBar(){
-        formulario.clicarSeekBar(0.67);
+        formulario.clicarSeekBar(0.70);
         formulario.salvar();
-        Assert.assertTrue(formulario.validarSlider().endsWith("67"));
+        Assert.assertTrue(formulario.validarSlider().endsWith("69"));
     }
 }

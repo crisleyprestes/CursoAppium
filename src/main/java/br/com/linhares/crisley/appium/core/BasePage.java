@@ -34,6 +34,7 @@ public class BasePage {
         new TouchAction<>(getDriver())
                 .longPress(PointOption.point
                         (getDriver().findElement(By.xpath("//*[@text='"+nome+"']")).getCenter()))
+                .release()
                 .perform();
     }
 
