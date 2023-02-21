@@ -8,16 +8,17 @@
 
 Para executar o projeto são necessários as seguintes aplicações/ferramentas:
 
-- Appium Java v7.6.0
-- JUnit v4.13.2
-- Apache Commons-io v2.11.0
-- Java
-- Android Studio
-- ADB
-- Appium Server
-- Google Chrome
-- IntelliJ Idea IDE
-- Git
+  - Appium Java v7.6.0
+  - JUnit v4.13.2
+  - Apache Commons-io v2.11.0
+  - Java
+  - Android Studio
+  - ADB
+  - uiautomatorviewer
+  - Appium Server
+  - Google Chrome
+  - IntelliJ Idea IDE
+  - Git
 
 ### Clonando o projeto
 
@@ -41,4 +42,5 @@ O projeto é constituído dos seguintes diretórios/arquivos:
   - **_tests_**: Classes com os testes automatizados para cada _feature_ das aplicações **_Campo de Treinamento_** e **_Seu Barriga_**.
 - **_resources_**: Diretório com o arquivo _.apk_ do aplicativo _Android_ utilizado no projeto de automação.
 
-**Notas**: Cada método de teste automatizado, ao fim de sua execução gera um screenshot como evidência. Este arquivo é salvo dentro do diretório **_/target/screenshots_**.
+**Notas**: 
+  - Cada método de teste automatizado, ao fim de sua execução gera um screenshot como evidência. Este arquivo é salvo dentro do diretório **_/target/screenshots_**.
