@@ -6,7 +6,7 @@
 
 ### Setup do projeto
 
-Para executar o projeto são necessários as seguintes aplicações/ferramentas:
+- Para executar o projeto são necessários as seguintes aplicações/ferramentas:
 
   - Appium Java v7.6.0
   - JUnit v4.13.2
