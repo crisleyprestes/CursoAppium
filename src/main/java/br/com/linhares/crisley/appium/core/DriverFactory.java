@@ -32,8 +32,6 @@ public class DriverFactory{
                 File.separator + "main" +
                 File.separator + "resources" +
                 File.separator + "CTAppium_2_0.apk");
-        // desiredCapabilities.setCapability("appWaitPackage", "com.google.android.permissioncontroller");
-        // desiredCapabilities.setCapability("appWaitActivity", "com.android.packageinstaller.permission.ui.ReviewPermissionsActivity");
 
         try {
             driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),
@@ -47,9 +45,6 @@ public class DriverFactory{
     private static void createTestObjectDriver(){
         MutableCapabilities caps = new MutableCapabilities();
         caps.setCapability("platformName", "Android");
-        // caps.setCapability("appium:platformVersion", "11");
-        // caps.setCapability("appium:deviceName", "Samsung.*Galaxy.*");
-        // caps.setCapability("appium:orientation", "portrait");
         caps.setCapability("appium:app", "storage:filename=CTAppium_2_0.apk");
         caps.setCapability("automationName", "UiAutomator2");
         MutableCapabilities sauceOptions = new MutableCapabilities();
